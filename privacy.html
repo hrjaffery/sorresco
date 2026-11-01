@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | Sorresco</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --navy:#0B1F4B; --royal:#1464D2; --slate:#5B6B88; --line:#D9E2F0; --bg:#fff; --fg:#0B1F4B; --muted:#5B6B88; }
+@media (prefers-color-scheme: dark){ :root{ --bg:#07142F; --fg:#F2F6FD; --muted:#A7B4CC; --line:#1E3466; } }
+body{ margin:0; background:var(--bg); color:var(--fg); font-family:'Montserrat',system-ui,sans-serif; font-size:16px; line-height:1.7; }
+.wrap{ width:min(760px, calc(100% - 2rem)); margin:0 auto; padding:2.5rem 0 4rem; }
+h1,h2{ font-family:'Poppins',system-ui,sans-serif; line-height:1.2; }
+h1{ font-size:2rem; margin:.5rem 0 .25rem; }
+h2{ font-size:1.2rem; margin:2rem 0 .5rem; }
+a{ color:var(--royal); }
+.meta{ color:var(--muted); font-size:.9rem; }
+.back{ text-decoration:none; font-weight:600; }
+.box{ border:1px solid var(--line); border-radius:12px; padding:1rem 1.25rem; margin:1rem 0; }
+[hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+<!-- SITE SETTINGS: use the same values as index.html -->
+<script>
+window.SORRESCO = {
+  businessPhone: "",
+  legalName: "",
+  mailingAddress: "",
+  email: "hello@sorresco.com"
+};
+</script>
+<div class="wrap">
+<a class="back" href="index.html">&larr; Back to Sorresco</a>
+<h1>Privacy Policy</h1>
+<p class="meta">Last updated: November 1, 2026</p>
+
+<p><span class="legal-name">Sorresco</span> ("Sorresco", "we", "us") provides missed-call text-back, lead follow-up and booking automation for home service businesses. This policy explains what information we collect through this website and our text messaging, how we use it, and the choices you have.</p>
+
+<h2>Information we collect</h2>
+<p>When you fill in a form on our site, we collect your name, company name, mobile phone number and, if you provide it, your email address. We also record whether you agreed to receive text messages, the wording you agreed to, and when you agreed. When you text or call us, we receive your phone number and the content of your messages. Our website may record basic technical data such as browser type and pages visited.</p>
+
+<h2>How we use it</h2>
+<ul>
+<li>To respond to your request and schedule a setup call.</li>
+<li>To send text messages you agreed to receive about your request and, if you become a client, your account.</li>
+<li>To provide and improve our services.</li>
+<li>To comply with legal obligations and keep records of consent.</li>
+</ul>
+
+<h2>Text messaging (SMS)</h2>
+<p>If you opt in, you may receive text messages from Sorresco about your inquiry, setup call and account. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> at any time to stop receiving messages, or <strong>HELP</strong> for help. Consent to receive text messages is not a condition of purchase.</p>
+<p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> Text messaging originator opt-in data and consent will not be shared with any third parties, except the service providers that deliver our messages on our behalf.</p>
+
+<h2>Sharing</h2>
+<p>We do not sell your personal information. We share information only with service providers that help us operate, such as our CRM, phone and messaging providers, and only as needed to provide our services. We may disclose information if required by law.</p>
+
+<h2>Client customer data</h2>
+<p>When a business uses Sorresco, we process information about that business's callers and customers on its behalf, only to provide the service it has asked for.</p>
+
+<h2>Retention and security</h2>
+<p>We keep information for as long as needed to provide our services and meet legal obligations, and use reasonable safeguards to protect it.</p>
+
+<h2>Your choices</h2>
+<p>You can opt out of texts by replying STOP. To ask us to access, correct or delete your information, contact us using the details below.</p>
+
+<h2>Changes</h2>
+<p>We may update this policy. The date at the top shows when it last changed.</p>
+
+<h2>Contact</h2>
+<div class="box">
+  <div class="biz-name">Sorresco</div>
+  <div class="biz-addr" hidden></div>
+  <div class="biz-mail"></div>
+  <div class="biz-phone" hidden></div>
+</div>
+</div>
+<script>
+(function(){
+  var C = window.SORRESCO || {};
+  function pretty(n){ var d=(n||'').replace(/\D/g,''); if(d.length===11&&d[0]==='1')d=d.slice(1); return d.length===10?'('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6):n; }
+  if (C.legalName) document.querySelectorAll('.biz-name, .legal-name').forEach(function(e){ e.textContent = C.legalName; });
+  if (C.mailingAddress) { var a=document.querySelector('.biz-addr'); a.textContent=C.mailingAddress; a.hidden=false; }
+  if (C.email) document.querySelectorAll('.biz-mail').forEach(function(e){ e.innerHTML=''; var l=document.createElement('a'); l.href='mailto:'+C.email; l.textContent=C.email; e.appendChild(l); });
+  if (C.businessPhone) { var p=document.querySelector('.biz-phone'); p.textContent=pretty(C.businessPhone); p.hidden=false; }
+})();
+</script>
+</body>
+</html>

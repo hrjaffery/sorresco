@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service | Sorresco</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{ --navy:#0B1F4B; --royal:#1464D2; --slate:#5B6B88; --line:#D9E2F0; --bg:#fff; --fg:#0B1F4B; --muted:#5B6B88; }
+@media (prefers-color-scheme: dark){ :root{ --bg:#07142F; --fg:#F2F6FD; --muted:#A7B4CC; --line:#1E3466; } }
+body{ margin:0; background:var(--bg); color:var(--fg); font-family:'Montserrat',system-ui,sans-serif; font-size:16px; line-height:1.7; }
+.wrap{ width:min(760px, calc(100% - 2rem)); margin:0 auto; padding:2.5rem 0 4rem; }
+h1,h2{ font-family:'Poppins',system-ui,sans-serif; line-height:1.2; }
+h1{ font-size:2rem; margin:.5rem 0 .25rem; }
+h2{ font-size:1.2rem; margin:2rem 0 .5rem; }
+a{ color:var(--royal); }
+.meta{ color:var(--muted); font-size:.9rem; }
+.back{ text-decoration:none; font-weight:600; }
+.box{ border:1px solid var(--line); border-radius:12px; padding:1rem 1.25rem; margin:1rem 0; }
+[hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+<!-- SITE SETTINGS: use the same values as index.html -->
+<script>
+window.SORRESCO = {
+  businessPhone: "",
+  legalName: "",
+  mailingAddress: "",
+  email: "hello@sorresco.com"
+};
+</script>
+<div class="wrap">
+<a class="back" href="index.html">&larr; Back to Sorresco</a>
+<h1>Terms of Service</h1>
+<p class="meta">Last updated: November 1, 2026</p>
+
+<p>These terms govern your use of this website and of text messages from <span class="legal-name">Sorresco</span> ("Sorresco", "we", "us"). By using the site or opting in to texts, you agree to them.</p>
+
+<h2>SMS program</h2>
+<div class="box">
+<p style="margin-top:0"><strong>Program:</strong> Sorresco customer and account messages.</p>
+<p><strong>What you'll receive:</strong> replies to your inquiry, setup call scheduling and reminders, and, if you become a client, service and account notifications.</p>
+<p><strong>Frequency:</strong> message frequency varies.</p>
+<p><strong>Cost:</strong> message and data rates may apply.</p>
+<p><strong>Opt out:</strong> reply <strong>STOP</strong> to any message. You'll receive one confirmation and no further messages.</p>
+<p style="margin-bottom:0"><strong>Help:</strong> reply <strong>HELP</strong>, or contact us using the details below.</p>
+</div>
+<p>Consent to receive text messages is not a condition of purchase. Carriers are not liable for delayed or undelivered messages. See our <a href="privacy.html">Privacy Policy</a> for how we handle your information.</p>
+
+<h2>Our services</h2>
+<p>Service details, pricing and any trial terms are agreed with each client before work begins. Information on this website is a general description and may change.</p>
+
+<h2>Use of the website</h2>
+<p>You agree not to misuse the site, interfere with its operation or submit information that isn't yours. Content on this site belongs to Sorresco and may not be copied without permission.</p>
+
+<h2>Disclaimers</h2>
+<p>The site is provided "as is". Results described on this site, including estimates from the missed-call calculator, are illustrations and are not guarantees for any specific business.</p>
+
+<h2>Limitation of liability</h2>
+<p>To the extent permitted by law, Sorresco is not liable for indirect or consequential damages arising from use of this website or our messages.</p>
+
+<h2>Governing law</h2>
+<p>These terms are governed by the laws of the State of Texas.</p>
+
+<h2>Changes</h2>
+<p>We may update these terms. The date at the top shows when they last changed.</p>
+
+<h2>Contact</h2>
+<div class="box">
+  <div class="biz-name">Sorresco</div>
+  <div class="biz-addr" hidden></div>
+  <div class="biz-mail"></div>
+  <div class="biz-phone" hidden></div>
+</div>
+</div>
+<script>
+(function(){
+  var C = window.SORRESCO || {};
+  function pretty(n){ var d=(n||'').replace(/\D/g,''); if(d.length===11&&d[0]==='1')d=d.slice(1); return d.length===10?'('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6):n; }
+  if (C.legalName) document.querySelectorAll('.biz-name, .legal-name').forEach(function(e){ e.textContent = C.legalName; });
+  if (C.mailingAddress) { var a=document.querySelector('.biz-addr'); a.textContent=C.mailingAddress; a.hidden=false; }
+  if (C.email) document.querySelectorAll('.biz-mail').forEach(function(e){ e.innerHTML=''; var l=document.createElement('a'); l.href='mailto:'+C.email; l.textContent=C.email; e.appendChild(l); });
+  if (C.businessPhone) { var p=document.querySelector('.biz-phone'); p.textContent=pretty(C.businessPhone); p.hidden=false; }
+})();
+</script>
+</body>
+</html>
